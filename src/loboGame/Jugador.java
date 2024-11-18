@@ -1,5 +1,6 @@
 package loboGame;
 
+
 public class Jugador {
 
     private String usuario;
@@ -15,10 +16,35 @@ public class Jugador {
 
     public boolean ingresar(){
         System.out.println("Ingresaste al juego");
+
+        String usuario = "";
+        String clave = "";
+        boolean sinLogear = true;
+
+        do {
+            System.out.print(" Ingrese el usuario: ");
+            usuario = Utilitario.entrada.nextLine();
+            System.out.print(" Ingrese el clave: ");
+            clave = Utilitario.entrada.nextLine();
+
+            if (this.usuario.equalsIgnoreCase(usuario) && this.clave.equalsIgnoreCase(clave)) {
+                jugar();
+                break;
+            }
+
+            System.out.println(" Datos erroneos! ");
+            System.out.print(" Para salir, ingrese (s): ");
+            if (Utilitario.entrada.nextLine().toUpperCase().equals("S")) {
+                sinLogear = false;
+            }
+
+        } while (sinLogear);
+
         return true;
     }
 
-    public void jugar(){
+    private void jugar(){
+        System.out.println("Jugando...");
         
     }
     
