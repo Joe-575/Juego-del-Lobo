@@ -5,6 +5,12 @@ public class Jugador {
     private String usuario;
     private String clave;
 
+    //creación del constructor
+    public Jugador() {
+        setUsuario("joel");
+        setClave("12345");
+    }
+
     public boolean ingresar(){
         System.out.println("Ingresaste al juego");
 
