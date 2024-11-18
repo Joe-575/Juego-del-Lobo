@@ -3,11 +3,13 @@ package loboGame;
 
 public class Jugador {
 
+    private Juego juego;
     private String usuario;
     private String clave;
 
     //creación del constructor
     public Jugador() {
+        juego = new Juego();
         setUsuario("joel");
         setClave("12345");
 
@@ -44,7 +46,8 @@ public class Jugador {
     }
 
     private void jugar(){
-        System.out.println("Jugando...");
+        System.out.println("¡Comenzando el juego!");
+        juego.jugarLobo();
         
     }
     
